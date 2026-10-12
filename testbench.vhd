@@ -13,10 +13,9 @@ architecture prueba of testbench is
     signal letra_sw     : std_logic_vector(2 downto 0) := "000";
     signal led_morse    : std_logic;
 
-    constant CLK_PERIOD : time := 20 ns;
+    constant CLK_PERIOD : time := 20 ns; 
 
 begin
-
     uut: entity work.morse
         port map (
             clk          => clk,
@@ -34,25 +33,39 @@ begin
         wait for CLK_PERIOD / 2;
     end process;
 
+   
     stim_proc: process
     begin
+        
         reset <= '0';
         iniciar <= '1';
         letra_sw <= "000"; 
         wait for 100 ns;
         reset <= '1'; 
         wait for 100 ns;
+  
         iniciar <= '0';
         wait for 100 ns;
         iniciar <= '1';
-        wait for 10 us;
-        letra_sw <= "100";
+        
+        wait for 2.5 sec;
+
+        letra_sw <= "100"; 
         wait for 100 ns;
         iniciar <= '0';
         wait for 100 ns;
         iniciar <= '1';
+        
         wait for 1.5 sec;
-        wait;
+
+        letra_sw <= "010"; 
+        wait for 100 ns;
+        iniciar <= '0';
+        wait for 100 ns;
+        iniciar <= '1';
+        wait for 3.5 sec;
+
+        wait; 
     end process;
 
 end prueba;
