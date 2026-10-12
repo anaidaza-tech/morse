@@ -1,2 +1,1 @@
-# EN este repositorio se encuentra el proyeyo de ana isabel daza ksdlaskdlasdksaldñaksdlñsakd
-# morse
+# En este repositorio se encuentra el proyecto de Ana Isabel Daza, donde se evidencia el codigo en Quartuz y en ModelSim
